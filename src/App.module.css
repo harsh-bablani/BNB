@@ -1,0 +1,202 @@
+/* ── Radial glow behind text ── */
+.glowBg {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 50%,
+    rgba(201, 169, 110, 0.08) 0%,
+    transparent 70%
+  );
+  animation: pulse-glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* ── Main wrapper ── */
+.scene {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Top ornament line ── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fade-up 1.2s 0.3s forwards;
+}
+
+.ornamentLine {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.ornamentLine.right {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.ornamentDiamond {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ── Brand name ── */
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1.6vw, 18px);
+  letter-spacing: 0.55em;
+  color: var(--gold);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade-up 1.2s 0.5s forwards;
+}
+
+/* ── Main headline ── */
+.headlineWrap {
+  margin-top: 32px;
+  text-align: center;
+  opacity: 0;
+  animation: fade-up 1.4s 0.8s forwards;
+}
+
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(52px, 10vw, 130px);
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.headline em {
+  font-style: italic;
+  background: linear-gradient(
+    135deg,
+    var(--gold-light) 0%,
+    var(--gold) 50%,
+    var(--gold-dim) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Sub line ── */
+.sub {
+  margin-top: 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 3vw, 32px);
+  color: rgba(201, 169, 110, 0.65);
+  letter-spacing: 0.06em;
+  opacity: 0;
+  animation: fade-up 1.4s 1.1s forwards;
+}
+
+/* ── Separator ── */
+.sep {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  animation: fade-up 1.2s 1.3s forwards;
+}
+
+.sepLine {
+  width: 120px;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.3);
+}
+
+.sepDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ── Tagline ── */
+.tagline {
+  margin-top: 36px;
+  font-size: clamp(9px, 1.1vw, 12px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  animation: fade-up 1.2s 1.5s forwards;
+}
+
+/* ── Bottom brand stamp ── */
+.stamp {
+  position: fixed;
+  bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+  opacity: 0;
+  animation: fade-up 1.2s 2s forwards;
+}
+
+.stampLine {
+  width: 40px;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.3);
+}
+
+.stampText {
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(201, 169, 110, 0.4);
+}
+
+/* ── Scanline overlay ── */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+}
+
+/* ── Shared fade-up animation ── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
