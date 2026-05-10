@@ -47,7 +47,7 @@ export default function App() {
         </div>
 
         {/* Tagline */}
-        <p className={styles.tagline}>Redefining Luxury&nbsp;·&nbsp;Est. 2025</p>
+        <p className={styles.tagline}>Redefining Luxury&nbsp;·&nbsp;Est. 2026</p>
 
         {/* Countdown Timer */}
         <Countdown />
@@ -56,7 +56,7 @@ export default function App() {
       {/* Bottom stamp */}
       <div className={styles.stamp}>
         <div className={styles.stampLine} />
-        <div className={styles.stampText}>© 2025 SKJ Luxuria. All rights reserved.</div>
+        <div className={styles.stampText}>© 2026 SKJ Luxuria. All rights reserved.</div>
         <div className={styles.stampLine} />
       </div>
     </>
