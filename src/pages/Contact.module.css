@@ -1,0 +1,500 @@
+/* ── Hero Section ── */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 50%,
+    rgba(201, 169, 110, 0.08) 0%,
+    transparent 70%
+  );
+  animation: pulse-glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1.6vw, 18px);
+  letter-spacing: 0.55em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fade-up 1.2s 0.3s forwards;
+}
+
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(42px, 8vw, 100px);
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fade-up 1.4s 0.5s forwards;
+}
+
+.headline em {
+  font-style: italic;
+  background: linear-gradient(
+    135deg,
+    var(--gold-light) 0%,
+    var(--gold) 50%,
+    var(--gold-dim) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 3vw, 28px);
+  color: rgba(201, 169, 110, 0.65);
+  letter-spacing: 0.06em;
+  opacity: 0;
+  animation: fade-up 1.4s 0.7s forwards;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Contact Section ── */
+.contact {
+  padding: 120px 0;
+  background: #0f0f0f;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+
+.ornamentLine {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.ornamentLine.right {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.ornamentDiamond {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.sectionTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: #fff;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+.sectionSub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(201, 169, 110, 0.65);
+  letter-spacing: 0.06em;
+}
+
+/* ── Contact Form ── */
+.contactForm {
+  background: rgba(201, 169, 110, 0.02);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 12px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.formGroup {
+  margin-bottom: 32px;
+}
+
+.label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.input, .textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  background: var(--gold);
+  color: #0a0a0a;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitBtn:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.3);
+}
+
+/* ── Contact Info ── */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoCard {
+  background: rgba(201, 169, 110, 0.02);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(201, 169, 110, 0.15);
+}
+
+.infoIcon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.infoCard h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.infoCard p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.infoLink {
+  display: inline-block;
+  color: var(--gold);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.infoLink:hover {
+  border-color: var(--gold);
+}
+
+.infoText {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+/* ── FAQ Section ── */
+.faq {
+  padding: 120px 0;
+  background: #0a0a0a;
+}
+
+.faqHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.faqList {
+  display: grid;
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  background: rgba(201, 169, 110, 0.02);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 8px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.faqItem h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.faqItem p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+/* ── CTA Section ── */
+.ctaSection {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: #fff;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.ctaContent p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: rgba(201, 169, 110, 0.65);
+  margin-bottom: 48px;
+  letter-spacing: 0.06em;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 18px 48px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--gold);
+  color: #0a0a0a;
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.3);
+}
+
+/* ── CSS Variables ── */
+:root {
+  --gold: #c9a96e;
+  --gold-light: #d4b87d;
+  --gold-dim: #b89a5f;
+}
+
+/* ── Responsive Design ── */
+@media (max-width: 1024px) {
+  .contactGrid {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 968px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .contactForm {
+    padding: 32px 24px;
+  }
+  
+  .infoCard {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact, .faq {
+    padding: 80px 16px;
+  }
+  
+  .contactForm {
+    padding: 24px 20px;
+  }
+  
+  .infoSection {
+    gap: 20px;
+  }
+  
+  .infoCard {
+    padding: 20px;
+  }
+  
+  .faqItem {
+    padding: 24px 20px;
+  }
+  
+  .faqList {
+    gap: 24px;
+  }
+  
+  .sectionTitle {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+  
+  .sectionSub {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact, .faq {
+    padding: 60px 12px;
+  }
+  
+  .contactForm {
+    padding: 20px 16px;
+  }
+  
+  .infoCard {
+    padding: 16px;
+  }
+  
+  .faqItem {
+    padding: 20px 16px;
+  }
+  
+  .faqList {
+    gap: 20px;
+  }
+  
+  .infoSection {
+    gap: 16px;
+  }
+  
+  .formGroup {
+    margin-bottom: 24px;
+  }
+  
+  .input, .textarea {
+    padding: 14px;
+  }
+}
+
+/* ── Shared fade-up animation ── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
