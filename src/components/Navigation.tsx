@@ -19,7 +19,7 @@ export default function Navigation() {
       <div className={styles.container}>
         {/* Logo */}
         <Link to="/" className={styles.logo}>
-          SKJ&nbsp;&nbsp;Luxuria
+          <img src="/logo.png" alt="SKJ Luxuria logo" className={styles.logoImage} />
         </Link>
 
         {/* Desktop Navigation */}

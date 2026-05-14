@@ -23,6 +23,9 @@
 
 /* ── Logo ── */
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   font-size: 18px;
@@ -31,12 +34,21 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease;
-  position: relative;
 }
 
 .logo:hover {
   color: var(--gold-light);
-  transform: translateY(-1px);
+}
+
+.logoImage {
+  width: 108px;
+  max-height: 72px;
+  height: auto;
+  display: block;
+}
+
+.logoText {
+  display: inline-block;
 }
 
 /* ── Desktop Menu ── */
